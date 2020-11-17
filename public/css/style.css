@@ -1,0 +1,11 @@
+main {
+    height: calc(100vh - 100px);
+}
+img.home-nav-logo {
+    height: 80px;
+    width: 150px;
+}
+img.card-img-product {
+    height: 180px;
+    width: 150px;
+}

@@ -1,0 +1,39 @@
+SignIn page
+       - Create account
+       - Login to account
+       - Forgot password
+Home page
+       - Navbar
+              - search form
+              - cart
+                     - list
+                     - select item
+                     - select all item
+                     - checkout selected item
+                            - order details
+              - categories
+                     - breadcrumbs (not priority)
+              - my account
+                     -profile
+                            -username
+                            -name
+                            -email
+                            -mobile#
+                     -addresses
+                            -home
+                            -office
+                     -change password
+              - signout
+              - messages (not priority)
+              - promotions (not priority)
+       - Products
+              - on click, show details
+My Account page
+       - link to Orders
+              - list of Orders
+              - order status (not priority)
+       - settings
+              - Account Info
+                     - name
+                     - change password
+                     - email
