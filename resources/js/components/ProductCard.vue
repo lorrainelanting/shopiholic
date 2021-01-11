@@ -51,8 +51,6 @@ export default {
       }
     },
   },
-  mounted() {
-    console.log(this.title);
-  },
+  mounted() {},
 };
 </script>

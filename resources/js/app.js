@@ -8,10 +8,10 @@ require("./bootstrap");
 
 window.Vue = require("vue");
 
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-
-// Vue.use(VueRouter);
+/**
+ * Imports
+ */
+import router from "./router.js";
 
 /**
  * The following block of code may be used to automatically register your
@@ -29,8 +29,16 @@ Vue.component(
     require("./components/ExampleComponent.vue").default
 );
 
+/**
+ * Product Components
+ */
 Vue.component("product-list", require("./components/ProductList.vue").default);
 Vue.component("product-card", require("./components/ProductCard.vue").default);
+
+/**
+ * Cart Components
+ */
+Vue.component("cart-items", require("./components/CartCard.vue").default);
 /**
  * Partials Components
  */
@@ -40,24 +48,29 @@ Vue.component(
 );
 
 /**
+ * User Settings Components
+ */
+Vue.component("user-profile", require("./components/UserProfile.vue").default);
+
+/**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-const routes = [
-    { path: '/user/profile'},
-];
 
-const router = new VueRouter({
-routes // short for `routes: routes`
+Vue.mixin({
+    methods: {
+        /**Calculate total price
+         * @param {integer} unitPrice
+         * @param {integer} quantity
+         * @return integer
+         * **/
+        calcTotalPrice: function({ unitPice = 0, quantity = 0 }) {
+            return unitPice * quantity;
+        }
+    }
 });
-  
-// const app = new Vue({
-//     // router,
-//     el: "#app"
-// });
+
 const app = new Vue({
     router
-  }).$mount('#app')
-  
-console.log("test")
+}).$mount("#app");
