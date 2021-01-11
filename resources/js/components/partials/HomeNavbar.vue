@@ -23,9 +23,10 @@
     </form>
     <i
       v-on:mouseover="mouseover('To do')"
+      v-on:click="showCart()"
       class="fas fa-shopping-cart fa-2x mr-3"
     ></i>
-    <button v-on:click="showUserInfo()" type="button" class="btn btn-light">
+    <button v-on:click="showUserInfo()" class="btn btn-light">
       <i class="fas fa-user-circle fa-2x mr-2"></i>
     </button>
   </nav>
@@ -33,14 +34,6 @@
 
 <script>
 export default {
-  // computed: {
-  //   userProfile() {
-  //     console.log(this.$route.params)
-  //     // We will see what `params` is shortly
-  //     return this.$route.params.username
-  //   }
-  // },
-
   data: function () {
     return {
       logoImageSrc: "/images/logo/logo.jpg",
@@ -49,10 +42,13 @@ export default {
 
   methods: {
     showUserInfo: function () {
-      $router.push('/user/profile')
+      return (window.location.href = "/user/profile");
     },
     mouseover: function (message) {
-      alert(message);
+      console.log(message);
+    },
+    showCart: function () {
+      return (window.location.href = "/cart");
     },
   },
 
